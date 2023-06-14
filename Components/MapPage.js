@@ -3,21 +3,24 @@ import { View, StyleSheet, Text, TouchableOpacity } from "react-native";
 import Canvas from "react-native-canvas";
 
 const vertices = [
-  { name: "A", x: 10, y: 50 },
-  { name: "B", x: 10, y: 100 },
-  { name: "C", x: 60, y: 50 },
-  { name: "D", x: 60, y: 100 },
-  { name: "E", x: 30, y: 150 },
+  { name: "Library", x: 170, y: 200 },
+  { name: "SportsC", x: 320, y: 200 },
+  { name: "Market", x: 280, y: 430 },
+  { name: "Moxi", x: 120, y: 430 },
+  { name: "h3,h1,h2", x: 120, y: 485 },
+  { name: "h7,h10,h8,h9", x: 30, y: 485 },
+  { name: "GirlsHostel", x: 100, y: 80 },
+  { name: "Comp. Dept", x: 230, y: 200 },
 ];
 
 const edges = [
-  { start: "A", end: "B", distance: 5 },
-  { start: "E", end: "A", distance: 1 },
-  { start: "A", end: "C", distance: 101 },
-  { start: "B", end: "D", distance: 3 },
-  { start: "C", end: "D", distance: 1 },
-  { start: "C", end: "E", distance: 2 },
-  { start: "D", end: "E", distance: 6 },
+  //   { start: "Library", end: "SportsC", distance: 5 },
+  //   { start: "Market", end: "Moxi", distance: 1 },
+  //   { start: "h3,h1,h2", end: "h7,h10,h8,h9", distance: 101 },
+  //   { start: "GirlsHostel", end: "Comp. Dept", distance: 3 },
+  //   { start: "Library", end: "h7,h10,h8,h9", distance: 1 },
+  //   { start: "GirlsHostel", end: "Library", distance: 2 },
+  //   { start: "Market", end: "Library", distance: 6 },
 ];
 
 const MapPage = ({ navigation }) => {
@@ -26,8 +29,7 @@ const MapPage = ({ navigation }) => {
   useEffect(() => {
     const renderCanvas = (ctx) => {
       // Clear the canvas
-      ctx.canvas.width = 100; // Set the desired width
-      ctx.canvas.height = 800; // Set the desired height
+
       ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
 
       // Render edges
@@ -61,7 +63,7 @@ const MapPage = ({ navigation }) => {
         ctx.fill();
 
         // Render label
-        ctx.font = "50px sans-serif";
+        ctx.font = "10px sans-serif";
         ctx.fillStyle = "black";
         ctx.textAlign = "center";
         ctx.fillText(vertex.name, vertex.x, vertex.y + 25);
@@ -100,8 +102,6 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
   },
   canvas: {
-    height: 190,
-    width: 100,
     alignSelf: "stretch",
     aspectRatio: 1,
     flex: 9,
