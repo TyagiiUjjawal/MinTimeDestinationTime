@@ -45,11 +45,11 @@ function dijkstra(graph, start) {
 
 const ShortestDistance = () => {
   const graph = [
-    [0, 5, 10, 0, 0], // A: [A->A, A->B, A->C, A->D, A->E]
-    [5, 0, 0, 3, 0], // B: [B->A, B->B, B->C, B->D, B->E]
-    [10, 0, 0, 1, 2], // C: [C->A, C->B, C->C, C->D, C->E]
+    [0, 0, 0, 6, 0], // A: [A->A, A->B, A->C, A->D, A->E]
+    [5, 0, 0, 0, 0], // B: [B->A, B->B, B->C, B->D, B->E]
+    [0, 0, 0, 0, 2], // C: [C->A, C->B, C->C, C->D, C->E]
     [0, 3, 1, 0, 6], // D: [D->A, D->B, D->C, D->D, D->E]
-    [0, 0, 2, 6, 0], // E: [E->A, E->B, E->C, E->D, E->E]
+    [0, 0, 2, 0, 0], // E: [E->A, E->B, E->C, E->D, E->E]
   ];
 
   const [source, setSource] = useState("");
