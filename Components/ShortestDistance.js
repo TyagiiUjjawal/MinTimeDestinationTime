@@ -45,13 +45,15 @@ function dijkstra(graph, start) {
 
 const ShortestDistance = () => {
   const graph = [
-    [0, 0, 0, 6, 0], // A: [A->A, A->B, A->C, A->D, A->E]
-    [5, 0, 0, 0, 0], // B: [B->A, B->B, B->C, B->D, B->E]
-    [0, 0, 0, 0, 2], // C: [C->A, C->B, C->C, C->D, C->E]
-    [0, 3, 1, 0, 6], // D: [D->A, D->B, D->C, D->D, D->E]
-    [0, 0, 2, 0, 0], // E: [E->A, E->B, E->C, E->D, E->E]
+    [0, 1001, 450, 550, 650, 1200, 350, 100], // A: [A->A, A->B, A->C, A->D, A->E]
+    [1001, 0, 600, 750, 800, 1500, 750, 500], // B: [B->A, B->B, B->C, B->D, B->E]
+    [450, 600, 0, 220, 300, 950, 600, 480], // C: [C->A, C->B, C->C, C->D, C->E]
+    [550, 750, 220, 0, 110, 850, 750, 550], // D: [D->A, D->B, D->C, D->D, D->E]
+    [650, 800, 300, 110, 0, 900, 800, 650], // E: [E->A, E->B, E->C, E->D, E->E]
+    [1200, 1500, 950, 850, 900, 0, 1100, 1200], // F: [E->A, E->B, E->C, E->D, E->E]
+    [280, 700, 600, 750, 800, 1200, 0, 250], // G: [E->A, E->B, E->C, E->D, E->E]
+    [100, 500, 480, 550, 650, 1200, 280, 0], // H: [E->A, E->B, E->C, E->D, E->E]
   ];
-
   const [source, setSource] = useState("");
   const [destination, setDestination] = useState("");
   const [shortestDistance, setShortestDistance] = useState(null);
