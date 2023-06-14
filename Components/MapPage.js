@@ -1,26 +1,25 @@
 import React, { useRef, useEffect } from "react";
 import { View, StyleSheet, Text, TouchableOpacity } from "react-native";
 import Canvas from "react-native-canvas";
-
 const vertices = [
-  { name: "Library", x: 170, y: 200 },
-  { name: "SportsC", x: 320, y: 200 },
-  { name: "Market", x: 280, y: 430 },
-  { name: "Moxi", x: 120, y: 430 },
-  { name: "h3,h1,h2", x: 120, y: 485 },
-  { name: "h7,h10,h8,h9", x: 30, y: 485 },
-  { name: "GirlsHostel", x: 100, y: 80 },
-  { name: "Comp. Dept", x: 230, y: 200 },
+  { name: "Library(A)", x: 170, y: 200 },
+  { name: "SportsC(B)", x: 320, y: 200 },
+  { name: "Market(C)", x: 280, y: 430 },
+  { name: "Moxi(D)", x: 120, y: 430 },
+  { name: "h3,h1,h2(E)", x: 120, y: 485 },
+  { name: "h7,h10,h8,h9(F)", x: 30, y: 485 },
+  { name: "GirlsHostel(G)", x: 100, y: 80 },
+  { name: "Comp. Dept(H)", x: 234, y: 200 },
 ];
 
 const edges = [
-  //   { start: "Library", end: "SportsC", distance: 5 },
-  //   { start: "Market", end: "Moxi", distance: 1 },
-  //   { start: "h3,h1,h2", end: "h7,h10,h8,h9", distance: 101 },
-  //   { start: "GirlsHostel", end: "Comp. Dept", distance: 3 },
-  //   { start: "Library", end: "h7,h10,h8,h9", distance: 1 },
-  //   { start: "GirlsHostel", end: "Library", distance: 2 },
-  //   { start: "Market", end: "Library", distance: 6 },
+  //   { start: "A", end: "B", distance: 5 },
+  //   { start: "E", end: "A", distance: 1 },
+  //   { start: "A", end: "C", distance: 101 },
+  //   { start: "B", end: "D", distance: 3 },
+  //   { start: "C", end: "D", distance: 1 },
+  //   { start: "C", end: "E", distance: 2 },
+  //   { start: "D", end: "E", distance: 6 },
 ];
 
 const MapPage = ({ navigation }) => {
@@ -29,7 +28,8 @@ const MapPage = ({ navigation }) => {
   useEffect(() => {
     const renderCanvas = (ctx) => {
       // Clear the canvas
-
+      ctx.canvas.width = 800; // Set the desired width
+      ctx.canvas.height = 800; // Set the desired height
       ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
 
       // Render edges
@@ -103,7 +103,6 @@ const styles = StyleSheet.create({
   },
   canvas: {
     alignSelf: "stretch",
-    aspectRatio: 1,
     flex: 9,
   },
   button: {
